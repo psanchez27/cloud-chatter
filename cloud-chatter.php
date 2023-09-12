@@ -11,7 +11,7 @@
 */
 
 //If this file is called directly, abort
-if (!defined('ABSPATH')) : exit;
+if ( !defined( 'ABSPATH' ) ) : exit;
 
 define('CLOUD_CHATTER_URL', plugin_dir_url(__FILE__));
 
@@ -20,3 +20,12 @@ include(plugin_dir_path(__FILE__) . 'includes/cloud-chatter-styles.php');
 
 //Include plugin JS
 include(plugin_dir_path(__FILE__) . 'includes/cloud-chatter-scripts.php');
+
+
+
+class CloudChatter()
+{
+  __construct(){
+    //constructor class
+  }
+}
