@@ -11,21 +11,51 @@
 */
 
 //If this file is called directly, abort
-if ( !defined( 'ABSPATH' ) ) : exit;
+if ( !defined( 'ABSPATH' ) ) {
+  die;
+}
 
 define('CLOUD_CHATTER_URL', plugin_dir_url(__FILE__));
-
-//Include plugin CSS
-include(plugin_dir_path(__FILE__) . 'includes/cloud-chatter-styles.php');
-
-//Include plugin JS
-include(plugin_dir_path(__FILE__) . 'includes/cloud-chatter-scripts.php');
-
 
 
 class CloudChatter()
 {
-  __construct(){
+  __construct() {
     //constructor class
   }
+
+  function register() {
+    add_action( 'admin_enqueue_scripts', array( $this, 'enqueue' ) );
+  }
+
+  //plugin activation code
+  function activate() {
+    //flush rewrite news
+    flush_rewrite_rules();
+  }
+
+  //plugin deactivation code
+  function deactivate() {
+    //flush rewrite news
+    flush_rewrite_rules();
+  }
+
+  //enqueue scripts and styles
+  function enqueue() {
+    //admin styles
+    wp_enqueue_style( 'cloud_chatter_admin_styles', plugin_url( 'assets/css/cloud-chatter-admin-styles.css' ) );
+    //admin scripts
+    wp_enqueue_script( 'cloud-_chatter_admin_scripts', plugin_url( 'assets/js/cloud-chatter-admin-scripts.js' ) );
+  }
 }
+
+if( class_exists( 'CloudChatter' ) ) {
+  $ccPlugin = new CloudChatter();
+  $ccPlugin->register();
+}
+
+//upon plugin activation
+register_activation_hook( __FILE__, array( $ccPlugin, 'activate' ) );
+
+//upon plugin deactivation
+register_deactivation_hook( __FILE__, array( $ccPlugin, 'deactivate' ) );
