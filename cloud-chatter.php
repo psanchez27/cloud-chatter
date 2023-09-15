@@ -23,9 +23,9 @@ if ( !defined( 'ABSPATH' ) ) {
 define('CLOUD_CHATTER_URL', plugin_dir_url(__FILE__));
 
 
-class CloudChatter()
+class CloudChatter
 {
-  __construct() {
+  function __construct() {
     //constructor class
   }
 
@@ -48,9 +48,9 @@ class CloudChatter()
   //enqueue scripts and styles
   function enqueue() {
     //admin styles
-    wp_enqueue_style( 'cloud_chatter_admin_styles', plugin_url( 'assets/css/cloud-chatter-admin-styles.css' ) );
+    wp_enqueue_style( 'cloud_chatter_admin_styles', plugins_url( '/assets/css/cloud-chatter-admin-styles.css', __FILE__ ) );
     //admin scripts
-    wp_enqueue_script( 'cloud-_chatter_admin_scripts', plugin_url( 'assets/js/cloud-chatter-admin-scripts.js' ) );
+    wp_enqueue_script( 'cloud_chatter_admin_scripts', plugins_url( '/assets/js/cloud-chatter-admin-scripts.js', __FILE__ ) );
   }
 }
 
