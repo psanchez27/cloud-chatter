@@ -51,6 +51,12 @@ class CloudChatter
     wp_enqueue_style( 'cloud_chatter_admin_styles', plugins_url( '/assets/css/cloud-chatter-admin-styles.css', __FILE__ ) );
     //admin scripts
     wp_enqueue_script( 'cloud_chatter_admin_scripts', plugins_url( '/assets/js/cloud-chatter-admin-scripts.js', __FILE__ ) );
+
+    //frontend styles
+    wp_enqueue_style( 'cloud_chatter_frontend_styles', plugins_url( '/assets/css/cloud-chatter-admin-styles.css', __FILE__ ) );
+    //frontend scripts
+    wp_enqueue_script( 'cloud_chatter_frontend_scripts', plugins_url( '/assets/js/cloud-chatter-frontend-scripts.js', __FILE__ ) );
+
   }
 }
 
