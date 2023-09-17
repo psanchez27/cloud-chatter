@@ -1,0 +1,19 @@
+/* Chat bubble button */
+.open-chat{
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  border-radius: 50%;
+  border: 3px solid #fff;
+}
+
+/* Chat box */
+.chat-box{
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  /* margin-right: -100%; */
+}
+.chat-box.show-chat-box{
+  margin-right: 0;
+}
