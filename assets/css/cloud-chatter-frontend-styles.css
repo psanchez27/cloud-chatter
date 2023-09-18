@@ -1,3 +1,10 @@
+/* util */
+
+:root{
+  --primary-color: red;
+  --secondary-color: blue;
+}
+
 /* Chat bubble button */
 .open-chat{
   position: fixed;
@@ -13,7 +20,19 @@
   bottom: 2rem;
   right: 2rem;
   /* margin-right: -100%; */
+  background-color: #fff;
 }
+
 .chat-box.show-chat-box{
   margin-right: 0;
+}
+
+.chat-box .chat-box-title{
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+.chat-box .chat-box-submit{
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
 }
